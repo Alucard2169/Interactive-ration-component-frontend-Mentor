@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+$main: hsl(216, 12%, 8%);
+$card: #202731;
+$component: hsl(25, 97%, 53%);
+$highlight: #3d444e;
+
+
+.highlight {
+    background-color: $component !important;
+}
+
+body {
+    background: $main;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+
+}
+
+.homepage {
+    background: linear-gradient(to bottom right, #1E252F 20%, #191D26 90%);
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 20px;
+
+    .start {
+        border-radius: 50px;
+        background-color: $highlight;
+        padding: .8rem;
+        transition: all 1s ease-in-out;
+
+        &:hover {
+            animation: spin 1s;
+        }
+    }
+
+    .info {
+        margin: 1.2rem 0;
+
+        .question {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .ask {
+            font-size: 1rem;
+            color: hsl(216, 12%, 54%);
+        }
+    }
+
+    .rating-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .rating {
+            width: 2.5rem;
+            padding: .8rem;
+            text-align: center;
+            background-color: $highlight;
+            color: white;
+            height: 2.5rem;
+            border-radius: 100%;
+            border: none;
+
+            &:hover {
+                background-color: hsl(217, 12%, 63%);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .submit {
+        width: 100%;
+        padding: .8rem;
+        border-radius: 50px;
+        margin-top: 1.5rem;
+        background-color: $component;
+        color: white;
+        border: none;
+        font-weight: 600;
+        letter-spacing: 3px;
+
+        &:hover {
+            color: $component;
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.thanks-page {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    background: linear-gradient(#202731 20%, #171E28 90%);
+    display: none;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+
+    .thanks {
+        width: 50%;
+
+        &:hover {
+            animation: spin 1s ease-out;
+        }
+    }
+
+    .rating-stats {
+        margin-top: 1.5rem;
+        color: $component;
+        font-size: .8rem;
+        padding: .5rem 1rem;
+        border-radius: 50px;
+        background: #272E38;
+    }
+
+    .greeting {
+        margin-top: 2rem;
+
+        .heading {
+            color: white;
+            margin-bottom: .7rem;
+        }
+
+        .app {
+            color: hsl(216, 12%, 54%);
+            font-size: .8rem;
+            line-height: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .homepage {
+        width: 30%;
+    }
+
+    .thanks-page {
+        width: 30%;
+
+        .greeting {
+            .app {
+                font-size: .9rem;
+            }
+        }
+    }
+
+}
+
+
+
+
+@keyframes spin {
+    0% {
+        transform: translate(1px) rotateX(0);
+        transition: all 400ms ease-in-out;
+    }
+
+    10% {
+        transform: translateZ(4px) rotateY(10deg);
+    }
+
+    20% {
+        transform: translateY(2px) rotateX(5deg);
+    }
+
+    30% {
+        transform: translateX(10px) rotateY(10deg);
+    }
+
+    40% {
+        transform: translateZ(4px) rotateY(10deg);
+    }
+
+    50% {
+        transform: translateX(8px) rotateY(10deg);
+    }
+
+    60% {
+        transform: translateZ(12px) rotateY(15deg);
+    }
+
+    70% {
+        transform: translateY(2px) rotateZ(20deg);
+    }
+
+    80% {
+        transform: translateX(12px) rotateX(13deg);
+    }
+
+    90% {
+        transform: translateY(8px) rotateZ(-50deg);
+    }
+
+    100% {
+        transform: translate(0) rotate(0);
+    }
+}
